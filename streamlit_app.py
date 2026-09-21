@@ -7,7 +7,10 @@ from pathlib import Path
 
 import streamlit as st
 
+from utils.pymc_compat import skip_pymc_marketing_mmm_import
 from utils.state import init_state
+
+skip_pymc_marketing_mmm_import()
 
 _ROOT = Path(__file__).resolve().parent
 os.environ.setdefault("MPLCONFIGDIR", str(_ROOT / ".mplconfig"))
