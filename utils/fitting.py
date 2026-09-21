@@ -5,6 +5,10 @@ from __future__ import annotations
 from typing import Any, Literal
 
 import pandas as pd
+
+from utils.pymc_compat import skip_pymc_marketing_mmm_import
+
+skip_pymc_marketing_mmm_import()
 from pypricing import (
     CrossElasticitySpec,
     LogLogDemandModel,
