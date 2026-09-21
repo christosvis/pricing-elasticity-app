@@ -36,7 +36,10 @@ def generate_demo_panel(
     random_state: int = 0,
     include_seasonality: bool = True,
 ) -> pd.DataFrame:
-    from pypricing import generate_mock_data
+    from utils.pymc_compat import skip_pymc_marketing_mmm_import
+
+    skip_pymc_marketing_mmm_import()
+    from pypricing.synthetic_data import generate_mock_data
 
     kwargs: dict = dict(
         n_skus=n_skus,
